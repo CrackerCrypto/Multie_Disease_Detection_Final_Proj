@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="fetalhealthImage">
+      <div class="container">
+            <h1 class="form-title">Fetal Health Form</h1>
+                <form action="{{ url_for('predictionPage')}}" method="post">
+                    {{ form.hidden_tag() }}
+                    <div class="main-user-info">
+                          <div class="user-input-box">
+                                {{ form.baseline_value.label }}
+                                {{ form.baseline_value(placeholder="Enter Fetal Heart Rate Value")}}
+                          </div>
+                          <div class="user-input-box">
+                                {{ form.abnormal_short_term_variability.label }}
+                                {{ form.abnormal_short_term_variability(placeholder="Enter Short Term Variability(STV) Value")}}
+                          </div>
+                          <div class="user-input-box">
+                                {{ form.abnormal_long_term_variability.label }}
+                                {{ form.abnormal_long_term_variability(placeholder="Enter Long Term Variability(LTV) Value")}}
+                          </div>
+                          <div class="user-input-box">
+                                {{ form.histogram_width.label }}
+                                {{ form.histogram_width(placeholder="Enter Width of FHR Histogram Value")}}
+                          </div>
+                          <div class="user-input-box">
+                                {{ form.histogram_min.label }}
+                                {{ form.histogram_min(placeholder="Enter Minimum of FHR Histogram Value")}}
+                          </div>
+                          <div class="user-input-box">
+                              {{ form.histogram_max.label }}
+                              {{ form.histogram_max(placeholder="Enter Maximum of FHR Histogram Value")}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.histogram_mode.label }}
+                              {{ form.histogram_mode(placeholder="Enter Mode of FHR Histogram Value")}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.histogram_mean.label }}
+                              {{ form.histogram_mean(placeholder="Enter Mean of FHR Histogram Value")}}
+                        </div>
+                          <div class="user-input-box">
+                                {{ form.histogram_median.label }}
+                                {{ form.histogram_median(placeholder="Enter Median of FHR Histogram Value")}}
+                          </div>
+                    </div>
+                    <div class="form-submit-btn">
+                        {{ form.submit(class='submit-btn') }}
+                    </div>
+                </form>
+      </div>
+</div>
+{% endblock %}

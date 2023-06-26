@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main">
+    <div class="navbar">
+        <div class="icon">
+            <h3 class="logo">Neuro-Health</h3>
+        </div>
+        <div class="iconim"></div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">DIAGNOSIS</a></li>
+                <li><a href="#">REPORTS</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Empowering Medical Diagnosis through Artificial Neural Network (ANN)</h1>
+        <p class="par">Promising to revolutionize clinical decision making and diagnosis by using data from medical reports to detect, measure, and analyze an illness.</p>
+
+        <div class="links">
+            <a class="cn1" href="{{ url_for('breastCancer')}}">Breast Cancer Detection</a>
+            <a class="cn2" href="{{ url_for('thyroidChecking')}}">Thyroid Detection</a>
+            <a class="cn3" href="{{ url_for('fetalHealthDetect')}}">Fetal Health Detection</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="result">
+<!-- breast cancer section -->
+    <div class="res-section">
+        {% if flag_value == 1 %}
+        {% if max_pred == 1 %}
+            <h1>Dear Patient,</h1><br>
+            <h1>Unfortunately, you are positive for Breast Cancer.</h1><br>
+            <h2>The chances are: {{pred[max_pred] * 100}}%</h2>
+        {% else %}
+            <h1>Dear Patient</h1><br>
+            <h1>Fortunately, you don't have Breast Cancer!!!</h1>
+        {% endif %}
+        <!-- Fetal Health section -->
+        {% elif flag_value == 2 %}
+            {% if max_pred == 1 %}
+                <h1>Dear Patient,</h1><br>
+                <h1>Unfortunately, The health of the fetus is "SUSPECT"</h1><br>
+                <h2>The chances are: {{pred[max_pred] * 100}}%</h2>
+            {% elif max_pred == 2 %}
+                <h1>Dear Patient,</h1><br>
+                <h1>Unfortunately, The health of the fetus is "PATHOLOGICAL"</h1><br>
+                <h2>The chances are: {{pred[max_pred] * 100}}%</h2>
+            {% else %}
+                <p>Your fetus's health is absolutely "NORMAL"!!!</p>
+            {% endif %}
+            <!-- Thyroid detection section -->
+        {% elif flag_value == 3 %}
+            {% if max_pred == 0 %}
+                <h1>Dear Patient,</h1><br>
+                <h1>Unfortunately, you are positive for Thyroid.</h1><br>
+                <h2>The chances are: {{pred[max_pred] * 100}}%</h2>
+            {% else %}
+                <h1>Dear Patient,</h1><br>
+                <h1>Fortunately, you don't have Thyroid!!!</h1>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

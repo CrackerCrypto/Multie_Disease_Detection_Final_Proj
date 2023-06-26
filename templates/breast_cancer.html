@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="breastCancerImage">
+      <div class="container">
+            <h1 class="form-title">Breast Cancer Form</h1>
+            <form action="{{ url_for('predictionPage')}}" method="post">
+              {{ form.hidden_tag() }}
+                  <div class="main-user-info">
+                        <div class="user-input-box">
+                              {{ form.radius_mean.label }}
+                              {{ form.radius_mean(placeholder='Enter Radius Mean')}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.texture_mean.label }}
+                              {{ form.texture_mean(placeholder="Enter Texture Mean")}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.perimeter_mean.label }}
+                              {{ form.perimeter_mean(placeholder="Enter Perimeter Mean Value")}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.area_mean.label }}
+                              {{ form.area_mean(placeholder="Enter Area Mean Value")}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.symmetry_mean.label }}
+                              {{ form.symmetry_mean(placeholder="Enter Symmetry Mean Value")}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.radius_se.label }}
+                              {{ form.radius_se(placeholder="Enter Radius SE Value")}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.perimeter_se.label }}
+                              {{ form.perimeter_se(placeholder="Enter Perimeter SE Value")}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.area_se.label }}
+                              {{ form.area_se(placeholder="Enter Area SE Value")}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.radius_worst.label }}
+                              {{ form.radius_worst(placeholder="Enter Radius Worst Value")}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.texture_worst.label }}
+                              {{ form.texture_worst(placeholder="Enter Texture Worst Value")}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.perimeter_worst.label }}
+                              {{ form.perimeter_worst(placeholder="Enter Perimeter Worst Value")}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.area_worst.label }}
+                              {{ form.area_worst(placeholder="Enter Area Worst Value")}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.smoothness_worst.label }}
+                              {{ form.smoothness_worst(placeholder="Enter Smoothness Worst Value")}}
+                        </div>
+                        <div class="user-input-box">
+                              {{ form.compactness_worst.label }}
+                              {{ form.compactness_worst(placeholder="Enter Compactness Worst Value")}}
+                        </div>
+                  </div>
+                  <div class="form-submit-btn">
+                        {{ form.submit(class="submit-btn") }}
+                  </div>
+          </form>
+      </div>
+
+</div>
+{% endblock %}

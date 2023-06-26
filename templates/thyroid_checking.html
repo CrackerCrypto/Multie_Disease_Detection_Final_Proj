@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="thyroidImage">
+    <div class="container">
+        <h1 class="form-title">Thyroid Form</h1>
+            <form action="{{ url_for('predictionPage')}}" method="post">
+                {{ form.hidden_tag() }}
+                <div class="main-user-info">
+                    <div class="user-input-box">
+                          {{ form.tsh_value.label }}
+                          {{ form.tsh_value(placeholder="Enter Thyroid-simulating Hormone Value")}}
+                    </div>
+                    <div class="user-input-box">
+                        {{ form.t3_value.label }}
+                        {{ form.t3_value(placeholder="Enter Triiodothyronine Value")}}
+                    </div>
+                    <div class="user-input-box">
+                        {{ form.tt4_value.label }}
+                        {{ form.tt4_value(placeholder="Enter Total Thyroxine Value")}}
+                    </div>
+                    <div class="user-input-box">
+                        {{ form.t4u_value.label }}
+                        {{ form.t4u_value(placeholder="Enter Thyroxine Utilization Rate Value")}}
+                    </div>
+                    <div class="user-input-box">
+                        {{ form.fti_value.label }}
+                        {{ form.fti_value(placeholder="Enter Free Thyroxine Index Value")}}
+                    </div>
+                    <div class="form-submit-btn">
+                        {{ form.submit(class='submit-btn') }}
+                    </div>
+                </div>
+            </form>
+    
+    </div>
+</div>
+{% endblock %}
